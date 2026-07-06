@@ -5,6 +5,7 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  const username = localStorage.getItem('username');
 
   function handleLogout() {
     localStorage.removeItem('token');
@@ -15,13 +16,14 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <span className={styles.logo}>MERN Social Feed</span>
+        <span className={styles.logo}>MERN Feed Pro</span>
         <nav className={styles.nav}>
           {token ? (
             <>
+              <span className={styles.userBadge}>Hello, {username}</span>
               <Link to="/" className={styles.link}>Feed</Link>
               <button onClick={handleLogout} className={styles.btnLogout}>
-                Logout
+                Sign Out
               </button>
             </>
           ) : (

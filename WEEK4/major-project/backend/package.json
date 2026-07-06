@@ -1,7 +1,7 @@
 {
-  "name": "week4-miniproject-backend",
+  "name": "week4-majorproject-backend",
   "version": "1.0.0",
-  "description": "Week 4 Mini Project Backend: Social Feed API",
+  "description": "Week 4 Major Project Backend: Social Media Feed",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

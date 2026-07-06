@@ -38,12 +38,16 @@ router.get('/', async function(req, res) {
 router.post('/', verifyToken, async function(req, res) {
   try {
     const { content } = req.body;
-    if (!content) {
+    if (!content || !content.trim()) {
       return res.status(400).json({ error: 'Post content is required' });
     }
 
+    if (content.trim().length > 300) {
+      return res.status(400).json({ error: 'Post content cannot exceed 300 characters' });
+    }
+
     const post = new Post({
-      content,
+      content: content.trim(),
       author: req.userId
     });
 
@@ -84,8 +88,12 @@ router.post('/:id/like', verifyToken, async function(req, res) {
 router.post('/:id/comment', verifyToken, async function(req, res) {
   try {
     const { content } = req.body;
-    if (!content) {
+    if (!content || !content.trim()) {
       return res.status(400).json({ error: 'Comment content is required' });
+    }
+
+    if (content.trim().length > 150) {
+      return res.status(400).json({ error: 'Comment content cannot exceed 150 characters' });
     }
 
     const post = await Post.findById(req.params.id);
@@ -94,7 +102,7 @@ router.post('/:id/comment', verifyToken, async function(req, res) {
     }
 
     post.comments.push({
-      content,
+      content: content.trim(),
       author: req.userId
     });
 

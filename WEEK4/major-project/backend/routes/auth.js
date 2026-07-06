@@ -13,9 +13,17 @@ router.post('/register', async function(req, res) {
       return res.status(400).json({ error: 'Please provide username and password' });
     }
 
+    if (username.trim().length < 3) {
+      return res.status(400).json({ error: 'Username must be at least 3 characters long' });
+    }
+
+    if (password.trim().length < 6) {
+      return res.status(400).json({ error: 'Password must be at least 6 characters long' });
+    }
+
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.status(400).json({ error: 'Username already exists' });
+      return res.status(400).json({ error: 'Username is already taken' });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);

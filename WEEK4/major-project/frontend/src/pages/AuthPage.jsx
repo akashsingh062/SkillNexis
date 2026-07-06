@@ -10,15 +10,24 @@ export default function AuthPage() {
   const [successMsg, setSuccessMsg] = useState("");
   const navigate = useNavigate();
 
+  function validateInputs() {
+    if (username.trim().length < 3) {
+      setErrorMsg("Username must be at least 3 characters long");
+      return false;
+    }
+    if (password.trim().length < 6) {
+      setErrorMsg("Password must be at least 6 characters long");
+      return false;
+    }
+    return true;
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     setErrorMsg("");
     setSuccessMsg("");
 
-    if (!username.trim() || !password.trim()) {
-      setErrorMsg("All fields are required");
-      return;
-    }
+    if (!validateInputs()) return;
 
     const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
 
@@ -43,7 +52,7 @@ export default function AuthPage() {
         localStorage.setItem('username', data.username);
         navigate('/');
       } else {
-        setSuccessMsg("Registration successful! Please login.");
+        setSuccessMsg("Registration successful! You can login now.");
         setIsLogin(true);
         setPassword("");
       }
@@ -55,7 +64,7 @@ export default function AuthPage() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
-        <h2>{isLogin ? 'Sign In to Feed' : 'Sign Up for Feed'}</h2>
+        <h2>{isLogin ? 'Sign In to Feed' : 'Create Feed Account'}</h2>
         
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.field}>
@@ -64,7 +73,7 @@ export default function AuthPage() {
               type="text" 
               value={username}
               onChange={function(e) { setUsername(e.target.value); }}
-              placeholder="Enter username"
+              placeholder="Username (min 3 chars)"
               required
             />
           </div>
@@ -75,7 +84,7 @@ export default function AuthPage() {
               type="password" 
               value={password}
               onChange={function(e) { setPassword(e.target.value); }}
-              placeholder="Enter password"
+              placeholder="Password (min 6 chars)"
               required
             />
           </div>
@@ -84,7 +93,7 @@ export default function AuthPage() {
           {successMsg && <div className={styles.success}>{successMsg}</div>}
 
           <button type="submit" className={styles.btnSubmit}>
-            {isLogin ? 'Sign In' : 'Sign Up'}
+            {isLogin ? 'Log In' : 'Sign Up'}
           </button>
         </form>
 
@@ -97,7 +106,7 @@ export default function AuthPage() {
               setSuccessMsg("");
             }}
           >
-            {isLogin ? "Create an account" : "Already registered? Login"}
+            {isLogin ? "New user? Create a profile" : "Already registered? Login"}
           </button>
         </div>
       </div>

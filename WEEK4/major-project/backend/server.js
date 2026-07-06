@@ -40,7 +40,7 @@ mongoose.connect(process.env.MONGO_URI)
     });
 
     app.listen(PORT, function() {
-      console.log('Mini-project social backend running on port ' + PORT);
+      console.log('Major-project social backend running on port ' + PORT);
     });
   })
   .catch(function(err) {

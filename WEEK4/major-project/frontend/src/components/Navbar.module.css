@@ -5,7 +5,7 @@
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -13,9 +13,10 @@
 }
 
 .logo {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #38bdf8;
+  letter-spacing: -0.5px;
 }
 
 .nav {
@@ -24,28 +25,41 @@
   gap: 20px;
 }
 
-.link {
+.userBadge {
+  font-size: 0.85rem;
   color: #94a3b8;
+  background-color: #1e293b;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid #334155;
+}
+
+.link {
+  color: #cbd5e1;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .link:hover {
-  color: #ffffff;
+  color: #38bdf8;
 }
 
 .btnLogout {
-  background-color: #ef4444;
-  color: #ffffff;
-  border: none;
-  padding: 6px 12px;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 6px 14px;
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btnLogout:hover {
-  background-color: #dc2626;
+  background-color: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
 }

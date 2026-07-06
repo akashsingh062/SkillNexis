@@ -6,7 +6,7 @@ export default function FeedPage() {
   const [posts, setPosts] = useState([]);
   const [content, setContent] = useState("");
   const [commentInputs, setCommentInputs] = useState({});
-  const [errorMsg, setErrorMsg] = useState("");
+  const [toasts, setToasts] = useState([]);
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
@@ -19,21 +19,40 @@ export default function FeedPage() {
     fetchPosts();
   }, [token]);
 
+  function triggerToast(msg, type = 'info') {
+    const id = Date.now();
+    setToasts(function(current) {
+      return [...current, { id, msg, type }];
+    });
+    setTimeout(function() {
+      setToasts(function(current) {
+        return current.filter(function(t) { return t.id !== id; });
+      });
+    }, 3000);
+  }
+
   async function fetchPosts() {
     try {
       const response = await fetch('http://localhost:5007/api/posts');
       const data = await response.json();
       if (response.ok) {
         setPosts(data);
+      } else {
+        triggerToast('Failed to load feed', 'error');
       }
     } catch (err) {
-      setErrorMsg('Failed to connect to backend feed');
+      triggerToast('Failed to connect to feed server', 'error');
     }
   }
 
   async function handleCreatePost(e) {
     e.preventDefault();
     if (!content.trim()) return;
+
+    if (content.trim().length > 300) {
+      triggerToast('Post exceeds the 300 character limit', 'error');
+      return;
+    }
 
     try {
       const response = await fetch('http://localhost:5007/api/posts', {
@@ -48,11 +67,12 @@ export default function FeedPage() {
       if (response.ok) {
         setPosts([data, ...posts]);
         setContent("");
+        triggerToast('Post shared successfully!', 'success');
       } else {
-        setErrorMsg(data.error || 'Failed to publish post');
+        triggerToast(data.error || 'Failed to publish post', 'error');
       }
     } catch (err) {
-      setErrorMsg('Failed to connect to server');
+      triggerToast('Failed to connect to server', 'error');
     }
   }
 
@@ -71,7 +91,7 @@ export default function FeedPage() {
         }));
       }
     } catch (err) {
-      setErrorMsg('Failed to toggle like');
+      triggerToast('Failed to like post', 'error');
     }
   }
 
@@ -79,6 +99,11 @@ export default function FeedPage() {
     e.preventDefault();
     const commentVal = commentInputs[id];
     if (!commentVal || !commentVal.trim()) return;
+
+    if (commentVal.trim().length > 150) {
+      triggerToast('Comment exceeds the 150 character limit', 'error');
+      return;
+    }
 
     try {
       const response = await fetch(`http://localhost:5007/api/posts/${id}/comment`, {
@@ -95,9 +120,12 @@ export default function FeedPage() {
           return p._id === id ? data : p;
         }));
         setCommentInputs({ ...commentInputs, [id]: "" });
+        triggerToast('Comment added!', 'success');
+      } else {
+        triggerToast(data.error || 'Failed to add comment', 'error');
       }
     } catch (err) {
-      setErrorMsg('Failed to add comment');
+      triggerToast('Failed to add comment', 'error');
     }
   }
 
@@ -109,19 +137,20 @@ export default function FeedPage() {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <h2 className={styles.title}>Social Feed Board</h2>
-        
-        {errorMsg && <div className={styles.error}>{errorMsg}</div>}
 
         <form onSubmit={handleCreatePost} className={styles.postForm}>
-          <textarea 
-            value={content}
-            onChange={function(e) { setContent(e.target.value); }}
-            placeholder="Share something with the world..."
-            rows="3"
-            required
-            className={styles.textarea}
-          />
-          <button type="submit" className={styles.btnPublish}>Publish Post</button>
+          <div className={styles.textareaWrapper}>
+            <textarea 
+              value={content}
+              onChange={function(e) { setContent(e.target.value); }}
+              placeholder="Share something with the community..."
+              rows="3"
+              required
+              className={styles.textarea}
+            />
+            <span className={styles.charCounter}>{content.length} / 300</span>
+          </div>
+          <button type="submit" className={styles.btnPublish}>Share Post</button>
         </form>
 
         <div className={styles.feed}>
@@ -130,7 +159,7 @@ export default function FeedPage() {
               <div key={post._id} className={styles.postCard}>
                 <div className={styles.postHeader}>
                   <span className={styles.username}>
-                    @{post.author ? post.author.username : 'Deleted User'}
+                    @{post.author ? post.author.username : 'User'}
                   </span>
                   <span className={styles.date}>
                     {new Date(post.createdAt).toLocaleDateString()}
@@ -169,7 +198,7 @@ export default function FeedPage() {
                       type="text" 
                       value={commentInputs[post._id] || ""}
                       onChange={function(e) { handleCommentInputChange(post._id, e.target.value); }}
-                      placeholder="Write a comment..."
+                      placeholder="Add a comment... (max 150 chars)"
                       required
                       className={styles.commentInput}
                     />
@@ -180,7 +209,16 @@ export default function FeedPage() {
             );
           })}
         </div>
+      </div>
 
+      <div className={styles.toastContainer}>
+        {toasts.map(function(t) {
+          return (
+            <div key={t.id} className={styles[`toast_${t.type}`]}>
+              {t.msg}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -8,43 +8,56 @@
 .container {
   background-color: #1e293b;
   border: 1px solid #334155;
-  border-radius: 12px;
-  padding: 30px;
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
 .title {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-top: 0;
   margin-bottom: 25px;
-}
-
-.error {
-  color: #ef4444;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
+  letter-spacing: -0.5px;
 }
 
 .postForm {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 35px;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.textareaWrapper {
+  position: relative;
+  width: 100%;
 }
 
 .textarea {
+  width: 100%;
   background-color: #0f172a;
   border: 1px solid #334155;
   color: #ffffff;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
   outline: none;
   font-size: 0.95rem;
   resize: vertical;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
 }
 
 .textarea:focus {
   border-color: #38bdf8;
+}
+
+.charCounter {
+  position: absolute;
+  bottom: 12px;
+  right: 15px;
+  font-size: 0.75rem;
+  color: #64748b;
 }
 
 .btnPublish {
@@ -56,6 +69,8 @@
   font-weight: bold;
   font-size: 0.95rem;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+  align-self: flex-end;
 }
 
 .btnPublish:hover {
@@ -71,14 +86,20 @@
 .postCard {
   background-color: #0f172a;
   border: 1px solid #334155;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 12px;
+  padding: 22px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.postCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .postHeader {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .username {
@@ -88,38 +109,40 @@
 }
 
 .date {
-  color: #94a3b8;
+  color: #64748b;
   font-size: 0.8rem;
 }
 
 .postContent {
-  color: #ffffff;
+  color: #f1f5f9;
   font-size: 1.05rem;
   line-height: 1.5;
-  margin: 0 0 15px 0;
+  margin: 0 0 18px 0;
 }
 
 .actions {
   display: flex;
   border-bottom: 1px solid #1e293b;
   padding-bottom: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .btnLike {
-  background-color: rgba(244, 63, 94, 0.1);
-  border: 1px solid rgba(244, 63, 94, 0.2);
+  background-color: #1e293b;
+  border: 1px solid #334155;
   color: #cbd5e1;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 6px;
   font-weight: bold;
   font-size: 0.85rem;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btnLike:hover {
   color: #ffffff;
-  background-color: #f43f5e;
+  background-color: rgba(244, 63, 94, 0.15);
+  border-color: #f43f5e;
 }
 
 .commentsBox {
@@ -129,9 +152,11 @@
 }
 
 .commentsHeading {
-  font-size: 0.85rem;
-  color: #94a3b8;
+  font-size: 0.82rem;
+  color: #64748b;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .commentsList {
@@ -143,8 +168,9 @@
 .commentRow {
   background-color: #1e293b;
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.88rem;
+  border: 1px solid #334155;
 }
 
 .commentUser {
@@ -168,10 +194,11 @@
   background-color: #1e293b;
   border: 1px solid #334155;
   color: #ffffff;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 10px 14px;
+  border-radius: 8px;
   outline: none;
   font-size: 0.85rem;
+  transition: border-color 0.2s ease;
 }
 
 .commentInput:focus {
@@ -182,14 +209,58 @@
   background-color: #1e293b;
   border: 1px solid #38bdf8;
   color: #38bdf8;
-  padding: 8px 15px;
-  border-radius: 6px;
+  padding: 10px 18px;
+  border-radius: 8px;
   font-weight: bold;
   font-size: 0.85rem;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btnComment:hover {
   background-color: #38bdf8;
   color: #0f172a;
+}
+
+.toastContainer {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.toast_success, .toast_error, .toast_info {
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast_success {
+  background-color: #10b981;
+}
+
+.toast_error {
+  background-color: #ef4444;
+}
+
+.toast_info {
+  background-color: #3b82f6;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
 }
