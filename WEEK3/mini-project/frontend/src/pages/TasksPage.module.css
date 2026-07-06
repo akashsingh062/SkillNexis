@@ -1,0 +1,238 @@
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+
+.card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.card h3 {
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.field input, .field textarea, .field select {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.field input:focus, .field textarea:focus, .field select:focus {
+  border-color: #38bdf8;
+}
+
+.rowFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.btnSubmit {
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btnSubmit:hover {
+  background-color: #0ea5e9;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #f43f5e;
+  font-size: 0.85rem;
+}
+
+.filterRow {
+  display: flex;
+  gap: 20px;
+  background-color: #0f172a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filterGroup label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.filterGroup select {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  outline: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.empty {
+  color: #94a3b8;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.taskItem {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.taskHeader h4 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.15rem;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tags span {
+  font-size: 0.72rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.priorityHigh {
+  background-color: rgba(244, 63, 94, 0.15);
+  color: #f43f5e;
+}
+
+.priorityMedium {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.priorityLow {
+  background-color: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+.statusTag {
+  background-color: #1e293b;
+  color: #94a3b8;
+}
+
+.taskDesc {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin: 0 0 15px 0;
+  line-height: 1.5;
+}
+
+.taskActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #1e293b;
+  padding-top: 15px;
+}
+
+.statusControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.statusSelect {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.btnDelete {
+  background-color: rgba(244, 63, 94, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.2);
+  color: #f43f5e;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btnDelete:hover {
+  background-color: #f43f5e;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
