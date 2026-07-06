@@ -3,7 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const Todo = require('../models/Todo');
 
-const JWT_SECRET = 'mysecretkey';
+const JWT_SECRET = process.env.JWT_SECRET || 'mysecretkey';
 
 function verifyToken(req, res, next) {
   const authHeader = req.headers['authorization'];
