@@ -1,0 +1,59 @@
+.react-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 320px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-header-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-icon {
+  font-size: 2rem;
+}
+
+.card-titles h3 {
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+  color: #ffffff;
+}
+
+.card-subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.card-actions-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-card-toggle {
+  background: transparent;
+  border: none;
+  color: #818cf8;
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.card-details-panel {
+  margin-top: 15px;
+  border-top: 1px solid #334155;
+  padding-top: 15px;
+}
+
+.card-details-panel p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0;
+}

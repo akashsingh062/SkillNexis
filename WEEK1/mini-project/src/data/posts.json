@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Mastering CSS Grid and Flexbox",
+    "summary": "Learn how to build highly responsive, complex grid interfaces using modern vanilla CSS structures.",
+    "content": "CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system, meaning it can handle both columns and rows, unlike Flexbox which is largely a 1-dimensional system. Combined, they form the absolute foundation of modern frontend UI responsive design.",
+    "category": "Design",
+    "date": "2026-07-01",
+    "author": "Akash Singh",
+    "readTime": "5 min read",
+    "emoji": "🎨"
+  },
+  {
+    "id": 2,
+    "title": "Building Reusable React Components",
+    "summary": "An in-depth guide to programming modular components utilizing react props and local hooks state.",
+    "content": "Components are the core building blocks of React. By creating highly reusable, self-contained elements that accept configuration inputs (Props) and maintain internal states, developers can assemble scalable applications with low code duplication and clean boundaries.",
+    "category": "Coding",
+    "date": "2026-07-03",
+    "author": "Akash Singh",
+    "readTime": "8 min read",
+    "emoji": "⚛️"
+  },
+  {
+    "id": 3,
+    "title": "Acoustic Engineering in Modern Audio Gadgets",
+    "summary": "How hardware engineering synthetically isolates sound frequencies to create active noise cancellation.",
+    "content": "Active Noise Cancellation (ANC) relies on destructive wave interference. External microphones capture environmental noise, and onboard processors generate anti-noise audio signals that cancel the incoming wave before reaching the listener's ear canal, providing absolute sonic clarity.",
+    "category": "Acoustics",
+    "date": "2026-07-04",
+    "author": "Aura Labs",
+    "readTime": "12 min read",
+    "emoji": "🎧"
+  },
+  {
+    "id": 4,
+    "title": "Vite: The Future of Frontend Tooling",
+    "summary": "Comparing Vite's dev compilation speed vs classic bundlers and exploring hot module replacement.",
+    "content": "Traditional bundlers like Webpack build the entire application bundle before serving it. Vite leverages native browser ES modules to load modules on demand, enabling sub-second dev server starts and instant hot module replacement (HMR), keeping your workspace extremely fast.",
+    "category": "Coding",
+    "date": "2026-07-05",
+    "author": "Akash Singh",
+    "readTime": "6 min read",
+    "emoji": "⚡"
+  },
+  {
+    "id": 5,
+    "title": "Essential Git Workflows for Teams",
+    "summary": "Reviewing rebase practices, branch isolation, and pulling mechanisms for clean versioning control.",
+    "content": "A clean git commit history makes it much easier to isolate bugs, run cherry-picks, and document changes. Teams should adopt standard branch names (feature/, bugfix/, hotfix/), write semantic commits, and use interactive rebases to squash redundant temporary checkpoints before merges.",
+    "category": "Career",
+    "date": "2026-07-06",
+    "author": "Akash Singh",
+    "readTime": "7 min read",
+    "emoji": "🛠️"
+  },
+  {
+    "id": 6,
+    "title": "UX Principles for Dark Mode Designs",
+    "summary": "Curating harmonious background colors, shadow depths, and neon accents without creating visual fatigue.",
+    "content": "Designing dark interfaces is more than just turning the background black. Pure black (#000000) causes high contrast glare. Instead, use soft slate blues or dark grays (#0f172a, #121212), set meta layers using subtle shadows, and restrict vibrant accents to specific actionable components.",
+    "category": "Design",
+    "date": "2026-07-06",
+    "author": "Akash Singh",
+    "readTime": "10 min read",
+    "emoji": "🔮"
+  }
+]

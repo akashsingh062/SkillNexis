@@ -1,0 +1,72 @@
+.react-form-component {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.react-form-component h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 5px;
+}
+
+.form-field input {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #ffffff;
+  outline: none;
+}
+
+.form-field input:focus {
+  border-color: #818cf8;
+}
+
+.field-error-text {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.form-submit-button {
+  width: 100%;
+  background-color: #818cf8;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-submit-button:hover {
+  background-color: #6366f1;
+}
+
+.form-success-banner {
+  margin-top: 15px;
+  background-color: rgba(52, 211, 153, 0.1);
+  color: #34d399;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  text-align: center;
+}

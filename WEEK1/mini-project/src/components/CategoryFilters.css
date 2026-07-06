@@ -1,0 +1,32 @@
+.categories-filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.categories-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-pill-btn {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.category-pill-btn:hover {
+  color: #ffffff;
+}
+
+.category-pill-btn.active {
+  background: #38bdf8;
+  color: #090d16;
+  border-color: #38bdf8;
+}

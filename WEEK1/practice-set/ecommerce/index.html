@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Audio Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-promo">
+        <p>Summer Sale: Use AURA15 for 15% off!</p>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Aura Audio</a>
+            <button class="nav-toggle" id="menu-btn">Menu</button>
+            <nav id="menu-links">
+                <a href="#hero">Home</a>
+                <a href="#products">Products</a>
+                <a href="#newsletter">Subscribe</a>
+            </nav>
+            <div class="cart-box">
+                <span>Cart: </span>
+                <span class="cart-num" id="cart-counter">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <span class="pill">New Arrivals</span>
+                    <h1>Aura Soundscape Neo</h1>
+                    <p>Features active noise cancellation and a 60-hour battery life. Perfect sound engineering.</p>
+                    <div class="price-info">
+                        <span class="now">$349.99</span>
+                        <span class="was">$399.99</span>
+                    </div>
+                    <button class="btn btn-add add-to-cart" data-name="Aura Soundscape Neo">Add to Cart</button>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/ecommerce_product.png" alt="Headphone Product">
+                </div>
+            </div>
+        </section>
+
+        <section class="products" id="products">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="emoji-box">📻</div>
+                        <h3>Aura Pulse Mini</h3>
+                        <p>Waterproof bluetooth speaker with 20 hours playtime.</p>
+                        <div class="card-bottom">
+                            <span>$89.99</span>
+                            <button class="add-to-cart" data-name="Aura Pulse Mini">+</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="emoji-box">🎧</div>
+                        <h3>Aura Earbuds Pro</h3>
+                        <p>Wireless earbuds with charging case and smart touch.</p>
+                        <div class="card-bottom">
+                            <span>$129.99</span>
+                            <button class="add-to-cart" data-name="Aura Earbuds Pro">+</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="emoji-box">🎙️</div>
+                        <h3>Aura Streamer Mic</h3>
+                        <p>Studio quality condenser microphone for streaming.</p>
+                        <div class="card-bottom">
+                            <span>$199.99</span>
+                            <button class="add-to-cart" data-name="Aura Streamer Mic">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter" id="newsletter">
+            <div class="newsletter-box">
+                <h2>Join Our Newsletter</h2>
+                <p>Sign up to get discounts and product updates.</p>
+                <form id="newsletter-form" novalidate>
+                    <div class="form-row">
+                        <input type="email" id="email-field" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-subscribe">Subscribe</button>
+                    </div>
+                    <span class="error" id="news-error">Please enter a valid email address.</span>
+                    <div class="success-alert" id="news-success">Subscribed successfully!</div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aura Audio Shop. Solved Practice Set.</p>
+    </footer>
+
+    <div class="toast" id="toast-alert">
+        <span id="toast-text">Item added!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

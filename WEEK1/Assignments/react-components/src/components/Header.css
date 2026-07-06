@@ -1,0 +1,94 @@
+.react-header {
+  width: 100%;
+  padding: 16px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+}
+
+.react-header.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.react-header.neon {
+  background: #110c1b;
+  color: #00f2fe;
+  border-bottom-color: #00f2fe;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #818cf8;
+}
+
+.neon .logo-dot {
+  background: #00f2fe;
+}
+
+.header-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item-link {
+  text-decoration: none;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav-item-link:hover {
+  color: #ffffff;
+}
+
+.neon .nav-item-link:hover {
+  color: #00f2fe;
+}
+
+.btn-theme-toggle {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-theme-toggle:hover {
+  background: #334155;
+}
+
+.neon .btn-theme-toggle {
+  background: #1f0f33;
+  border-color: #00f2fe;
+  color: #00f2fe;
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+}

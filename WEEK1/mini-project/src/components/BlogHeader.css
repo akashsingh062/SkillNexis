@@ -1,0 +1,67 @@
+.blog-header {
+  width: 100%;
+  padding: 40px 20px 40px;
+  box-sizing: border-box;
+}
+
+.header-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.pulsing-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #38bdf8;
+}
+
+.header-hero {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #38bdf8;
+  margin: 0;
+}
+
+.header-hero .subtitle {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.active-count-tag {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+  padding: 6px 14px;
+  border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+  .header-hero h1 {
+    font-size: 2.3rem;
+  }
+}
