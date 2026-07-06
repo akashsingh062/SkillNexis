@@ -1,0 +1,106 @@
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #1e293b;
+  padding-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.input {
+  flex-grow: 1;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #ffffff;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.input:focus {
+  border-color: #38bdf8;
+}
+
+.btnAdd {
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btnAdd:hover {
+  background-color: #0ea5e9;
+}
+
+.listContainer {
+  background-color: #1e1b4b;
+  border: 1px solid #312e81;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.emptyText {
+  color: #64748b;
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #312e81;
+  padding: 12px 0;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.todoText {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.btnDelete {
+  background-color: rgba(244, 63, 94, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.2);
+  color: #f43f5e;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btnDelete:hover {
+  background-color: #f43f5e;
+  color: #ffffff;
+  border-color: transparent;
+}

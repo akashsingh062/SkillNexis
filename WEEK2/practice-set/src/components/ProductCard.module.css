@@ -1,0 +1,114 @@
+.card {
+  background-color: #1e1b4b;
+  border: 1px solid #312e81;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.category {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #818cf8;
+  background-color: rgba(129, 140, 248, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.instock {
+  font-size: 0.8rem;
+  color: #34d399;
+}
+
+.outstock {
+  font-size: 0.8rem;
+  color: #f43f5e;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.btnCount {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.countText {
+  color: #ffffff;
+  font-size: 0.95rem;
+  min-width: 15px;
+  text-align: center;
+}
+
+.btnBuy {
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btnBuy:hover:not(:disabled) {
+  background-color: #0ea5e9;
+}
+
+.btnBuy:disabled {
+  background-color: #334155;
+  color: #64748b;
+  cursor: not-allowed;
+}
